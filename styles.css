@@ -38,17 +38,16 @@ span {
 }
 
 #player {
-    border: 2px dotted transparent;
-    padding-right: 18px;
+    border: 2px dotted green;
 }
 
 #computer {
-    border: 2px dotted transparent;
+    border: 2px dotted red;
 }
 
 .score {
     display: flex;
-    gap: 5px;
+    gap: 2px;
 }
 
 .retry {
