@@ -5,8 +5,17 @@
 
 html{ zoom: 150%; }
 
-.container {
+.ask-username {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: aqua;
+    position: absolute; top: 0; left: 0; height: 100%; width: 100%;
+    background: url(images/background.jpeg) no-repeat center center/ cover;
+}
+.container {
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
