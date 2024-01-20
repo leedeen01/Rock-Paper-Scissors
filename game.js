@@ -1,3 +1,5 @@
+let playerChoices = [];
+
 function getComputerChoice() {
     let choices = ["ROCK", "PAPER", "SCISSORS"];
     return choices[Math.floor(Math.random()*choices.length)];
@@ -45,16 +47,25 @@ let content = document.querySelector('.result');
 let playerScore = document.querySelector('#player span');
 let computerScore = document.querySelector('#computer span');
 let announcement = document.querySelector('.announcement');
+let game = document.querySelector(".container");
+let next = document.querySelector(".game-end");
+let retry = document.querySelector(".retry");
 
-
+retry.addEventListener('click', () => {
+    location.reload();
+})
 
 rock.addEventListener('click', function act() {
     let computer = getComputerChoice();
     content.textContent = playRound("ROCK", computer);
     if (computerScore.textContent == '5') {
-        announcement.textContent = "WINNER: COMPUTER! Try Again";
+        announcement.textContent = `YOU LOSE! Try Again (${computerScore.textContent} vs ${playerScore.textContent})`;
+        game.style.display = "none";
+        next.style.display = "flex";
     } else if (playerScore.textContent == '5') {
-        announcement.textContent = "WINNER: PLAYER!";
+        announcement.textContent = `WINNER: PLAYER! (${computerScore.textContent} vs ${playerScore.textContent})`;
+        game.style.display = "none";
+        next.style.display = "flex";
     }
 });
 
@@ -62,10 +73,13 @@ paper.addEventListener('click', function act() {
     let computer = getComputerChoice();
     content.textContent = playRound("PAPER", computer);
     if (computerScore.textContent == '5') {
-        announcement.textContent = "WINNER: COMPUTER! Try Again";
+        announcement.textContent = `YOU LOSE! Try Again (${computerScore.textContent} vs ${playerScore.textContent})`;
+        game.style.display = "none";
+        next.style.display = "flex";
     } else if (playerScore.textContent == '5') {
-        announcement.textContent = "WINNER: PLAYER!";
-
+        announcement.textContent = `WINNER: PLAYER! (${computerScore.textContent} vs ${playerScore.textContent})`;
+        game.style.display = "none";
+        next.style.display = "flex";
     }
 });
 
@@ -73,9 +87,12 @@ scissors.addEventListener('click', function act() {
     let computer = getComputerChoice();
     content.textContent = playRound("SCISSORS", computer);
     if (computerScore.textContent == '5') {
-        announcement.textContent = "WINNER: COMPUTER! Try Again";
+        announcement.textContent = `YOU LOSE! Try Again (${computerScore.textContent} vs ${playerScore.textContent})`;
+        game.style.display = "none";
+        next.style.display = "flex";
     } else if (playerScore.textContent == '5') {
-        announcement.textContent = "WINNER: PLAYER!";
-        
+        announcement.textContent = `WINNER: PLAYER! (${computerScore.textContent} vs ${playerScore.textContent})`;
+        game.style.display = "none";
+        next.style.display = "flex";
     }
 });
